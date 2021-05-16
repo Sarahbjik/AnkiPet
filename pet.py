@@ -14,7 +14,7 @@ import random
 
 def get_max_age(id_str):
     age_dict_lower = {'Chicken':700, 'Cat':1000}
-    age_dict_upper = {'Chicken':1500, 'Cat':2000}
+    age_dict_upper = {'Chicken':1500, 'Cat':20000}
     return random.randint(age_dict_lower[id_str],age_dict_upper[id_str])
 
 
@@ -36,7 +36,7 @@ class Pet():
         cropped = pix.copy(rect)
         graph=QIcon(cropped)
         item.setIcon(graph)
-        item.setText("Name: "+self.name+" \nAge: "+str(math.floor(self.age))+" days")
+        item.setText("Species: "+self.type+"\nName: "+self.name+" \nAge: "+str(math.floor(self.age))+" days")
         return item
         
     def debug(self,to_print):

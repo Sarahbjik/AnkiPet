@@ -1,0 +1,22 @@
+The game starts out with an event, upon which you will be given care of your first pet. 
+
+Care well for it and it will prosper!
+
+You achieve this by doing the due cards for each day (due cards from the last three days are considered here). 
+In case you only do a fraction, the progress is reduced but still present.
+In case your progress is little the pet might suffer or die.
+
+To gain progress you have to press the 'Resolve day' button once you are finished with your cards.
+Mind that you can only do this once a day! 
+
+When you collected enough reputation by caring well for the pet you might get further pet offers for your stable.
+How well you recently cared for your stable is indicated by the mood of a smiley face.
+The last 15 days are taken as a reference here.
+
+The game will register if you care for your pets every single day or if there was a break for some period of time.
+
+You can name your pets by clicking on them. Also, it can happen that a pet dies from old age.
+
+Have fun!
+
+Disclaimer: currently it is necessary to close the main game window with the 'Close' button, do not close with the 'X'. 

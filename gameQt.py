@@ -49,15 +49,27 @@ class GameQt():
             self.update_renderPet2()
         btn = QPushButton(_("Resolve day"))
         btn.clicked.connect(resolveDayBtn)
+        
+        
         box=QDialogButtonBox(QDialogButtonBox.Close)
         self.layout.addWidget(box)
         box.addButton(btn, QDialogButtonBox.ActionRole)
-        
+
         def onReject():
             self.game.save_pets()
             QDialog.reject(self.diag)
         box.rejected.connect(onReject)
         box.accepted.connect(onReject)
+        
+        
+        def helpBtn():
+            self.help_info_box()
+        btn = QPushButton(_("Help"))
+        btn.clicked.connect(helpBtn)
+        #box=QDialogButtonBox(QDialogButtonBox.Close)
+        self.layout.addWidget(box)
+        box.addButton(btn, QDialogButtonBox.ActionRole)
+        
         
         self.util.debug("gameQt.showPet() finished with window and buttons")
         
@@ -81,7 +93,7 @@ class GameQt():
         frac=stats[2]*100
         tok=int(math.sqrt(frac))
         progress =self.game.factor(tok)
-        line="Current progress today: "+'{:.2f}'.format(progress)+" days.\nTo do: "+str(stats[0])+"          Done today:"+str(stats[1])+"          Fraction done: "+ \
+        line="Current pet growth progress today: "+'{:.2f}'.format(progress)+" days.\nTo do: "+str(stats[0])+"          Done today:"+str(stats[1])+"          Fraction done: "+ \
             str(frac)[:4]+"%\nReputation: "+str(stats[4]) + "\nThe mood in your stable currently is "+self.game.stable_mood
         self.util.debug("gameQt.showPet() finished retrieving stats: "+line)
         return line
@@ -141,6 +153,15 @@ class GameQt():
         if returnValue == QMessageBox.Ok:
             self.util.debug("OK clicked in game_event")
             self.game.createPet(event_pet)
+            
+    def help_info_box(self):
+        with open(mw.pm.addonFolder()+"\\AnkiPet\\help.txt") as help_file:
+            message=help_file.read()
+        msg = QMessageBox()
+        msg.setText(message)
+        msg.setWindowTitle("Help")
+        msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+        returnValue = msg.exec()
         
 class Util():
     

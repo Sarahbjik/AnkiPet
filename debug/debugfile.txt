@@ -1,0 +1,60 @@
+Starting to __init__() GameQT
+	Game __init__ config values: {'lastResolve': '2021-05-16', 'reputation': 0, 'zeal': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 7], 'pets': ['Chicken'], 'age': [0.0], 'max_age': [1047], 'names': [''], 'rep': [0], 'events': [0, 1]}
+		Game load_pets(): idx, pet_entry 0, Chicken
+			Creating a chicken.
+			Game create_pet_object: Type: Chicken, age: 0.0, name: , rep: 0
+		Game load_pets() number of pets in pet_objects: 1
+	Game __init__: loaded the pets.
+			Game progress_down_days(): start
+			Game progress_down_days(): days_str 0:00:00
+			Game progress_down_days(): days 0
+	Game __init__: progressed down days.
+Finished __init__() of gameQt
+gameQt.showPet() start
+gameQt.showPet() start to retrieve stats info
+	Game getTodayStats: due until today 141
+	Game getTodayStats: due today 55
+	Game getTodayStats: done today 64
+gameQt.showPet() finished retrieving stats: Current pet growth progress today: 0.33 days.
+To do: 55          Done today:64          Fraction done: 53.7%
+Reputation: 0
+The mood in your stable currently is :|
+gameQt.showPet() finished with window and buttons
+	Pet: Fetching chicken pic
+	Pet: Pic slot: 0
+gameQt.showPet() finished rendering the pets
+Checking on game event
+gameQt.showPet() finished check for event
+		Game save_pets(): saved the pets to json file 
+gameQt.showPet() start
+gameQt.showPet() start to retrieve stats info
+	Game getTodayStats: due until today 141
+	Game getTodayStats: due today 55
+	Game getTodayStats: done today 64
+gameQt.showPet() finished retrieving stats: Current pet growth progress today: 0.33 days.
+To do: 55          Done today:64          Fraction done: 53.7%
+Reputation: 0
+The mood in your stable currently is :|
+gameQt.showPet() finished with window and buttons
+	Pet: Fetching chicken pic
+	Pet: Pic slot: 0
+gameQt.showPet() finished rendering the pets
+Checking on game event
+gameQt.showPet() finished check for event
+		Game save_pets(): saved the pets to json file 
+gameQt.showPet() start
+gameQt.showPet() start to retrieve stats info
+	Game getTodayStats: due until today 141
+	Game getTodayStats: due today 55
+	Game getTodayStats: done today 64
+gameQt.showPet() finished retrieving stats: Current pet growth progress today: 0.33 days.
+To do: 55          Done today:64          Fraction done: 53.7%
+Reputation: 0
+The mood in your stable currently is :|
+gameQt.showPet() finished with window and buttons
+	Pet: Fetching chicken pic
+	Pet: Pic slot: 0
+gameQt.showPet() finished rendering the pets
+Checking on game event
+gameQt.showPet() finished check for event
+		Game save_pets(): saved the pets to json file 
