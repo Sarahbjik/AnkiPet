@@ -20,3 +20,6 @@ You can name your pets by clicking on them. Also, it can happen that a pet dies 
 Have fun!
 
 Disclaimer: currently it is necessary to close the main game window with the 'Close' button, do not close with the 'X'. 
+
+Graphics copyright, programming by: Sarah Reisenbauer
+License: GPL-3.0
