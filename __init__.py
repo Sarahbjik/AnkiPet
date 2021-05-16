@@ -5,13 +5,7 @@ from aqt import mw
 from aqt.qt import *
 
 from . import gameQt
-
-'''
-def enterGame():
-    # show a dialog box
-    gm = gameQt.GameQt()
-    gm.showPet()
-'''    
+ 
 
 def enterGame():
     # show a dialog box
