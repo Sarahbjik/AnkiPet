@@ -14,16 +14,20 @@ import math
 import json
 import datetime 
 import random
+import os
 
 from . import pet
 
 # saves to json only happen when progress_down_days is done, on pet creation, when the day is resolved and when exited.
 
+
+PATH = os.path.abspath(os.path.dirname(__file__))
+
 class Game():
 
     def __init__(self):
         self.util = Util()
-        self.config = mw.addonManager.getConfig("AnkiPet\\user_files\\")
+        self.config = mw.addonManager.getConfig(os.path.join(PATH,"user_files"))
         #{"lastResolve": "2021-05-15", "reputation": 68.75, "zeal": [0, 0, 6, 7, 7, 0, 7, 0, 0, 7, 6, 0, 0, 0, 0], "pets": ["Cat"], "age": [0], "names": ["Schatt"], "rep": [41.25], "events": [1, 0]}
         try:
             self.reputation = self.config['reputation']
@@ -145,7 +149,7 @@ class Game():
             # get new tokens from days stats
             stats = self.getTodayStats()
             frac=stats[2]*100
-            tok=int(math.sqrt(frac))
+            tok=int(frac/10.0)
             self.tokens+=tok
             # optionally - get reputation
             rep_factor=0
@@ -176,11 +180,11 @@ class Game():
         if tokens == 10:
             return 1
         elif tokens == 9:
-            return 1/1.5
+            return 1
         elif tokens == 8:
-            return 1/2.0
+            return 1/1.5
         elif tokens == 7:
-            return 1/3.0
+            return 1/2.0
         elif tokens == 6:
             return 1/3.0
         elif tokens == 5:
@@ -268,7 +272,7 @@ class Game():
             nameList.append(pet_entry.name)
             repList.append(pet_entry.rep)
         save={"lastResolve":self.lastResolve,"reputation":self.reputation,"zeal":self.zeal,"pets":petList, "age":ageList, "max_age":max_ageList, "names":nameList, "rep":repList, "events":self.eventsList}
-        path=mw.pm.addonFolder()+"\\AnkiPet\\user_files\\config.json"
+        path=os.path.join(PATH,"user_files\\config.json")
         with open(path, "w", encoding="utf8") as f:
             json.dump(save, f)
         self.util.debug("\t\tGame save_pets(): saved the pets to json file ")
@@ -379,7 +383,7 @@ class Util():
     
     def debug(self,to_print):
         print_str = str(to_print)
-        debug_file=open(mw.pm.addonFolder()+"\\AnkiPet\\debug\\debugfile.txt","a")
+        debug_file=open(os.path.join(PATH,"debug\\debugfile.txt"),"a")
         debug_file.write("\n"+print_str)
         debug_file.close()
         

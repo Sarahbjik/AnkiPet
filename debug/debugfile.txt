@@ -1,47 +1,27 @@
 Starting to __init__() GameQT
-	Game __init__: didn't find config or error in assigning values.
+	Game __init__ config values: {'lastResolve': '2021-05-17', 'reputation': 0, 'zeal': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 9], 'pets': ['Cat'], 'age': [1.3333333333333333], 'max_age': [12804], 'names': ['Schattus'], 'rep': [0], 'events': [0]}
+		Game load_pets(): idx, pet_entry 0, Cat
+			Creating a cat.
+			Game create_pet_object: Type: Cat, age: 1.3333333333333333, name: Schattus, rep: 0
+		Game load_pets() number of pets in pet_objects: 1
 	Game __init__: loaded the pets.
 			Game progress_down_days(): start
-			Game progress_down_days(): days_str 1 day, 0:00:00
-			Game progress_down_days(): days 1
+			Game progress_down_days(): days_str 0:00:00
+			Game progress_down_days(): days 0
 	Game __init__: progressed down days.
 Finished __init__() of gameQt
 gameQt.showPet() start
 gameQt.showPet() start to retrieve stats info
-	Game getTodayStats: due until today 141
-	Game getTodayStats: due today 55
-	Game getTodayStats: done today 64
-gameQt.showPet() finished retrieving stats: Current pet growth progress today: 0.33 days.
-To do: 55          Done today:64          Fraction done: 53.7%
+	Game getTodayStats: due until today 83
+	Game getTodayStats: due today 3
+	Game getTodayStats: done today 148
+gameQt.showPet() finished retrieving stats: Current pet growth progress today: 1.00 days.
+To do: 3          Done today:148          Fraction done: 98.0%
 Reputation: 0
 The mood in your stable currently is :|
 gameQt.showPet() finished with window and buttons
+	Pet: Fetching cat pic
+	Pet: Pic slot: 1
 gameQt.showPet() finished rendering the pets
 Checking on game event
-	Game getTodayStats: due until today 141
-	Game getTodayStats: due today 55
-	Game getTodayStats: done today 64
-gameQt.showPet() finished retrieving stats: Current pet growth progress today: 0.33 days.
-To do: 55          Done today:64          Fraction done: 53.7%
-Reputation: 0
-The mood in your stable currently is :|
-Randomly choosing game event
-Catch: 1
-Random value: 1
-Your friend hands you an egg. Put it in your incubator and care for it and a chick will hatch., Chicken
-OK clicked in game_event
-			Creating a chicken.
-			Game create_pet_object: Type: Chicken, age: 0, name: , rep: 0
-		Game save_pets(): saved the pets to json file 
-	Pet: Fetching chicken pic
-	Pet: Pic slot: 0
 gameQt.showPet() finished check for event
-	Pet: Fetching chicken pic
-	Pet: Pic slot: 0
-	Pet: Fetching chicken pic
-	Pet: Pic slot: 0
-	Pet: Fetching chicken pic
-	Pet: Pic slot: 0
-	Pet: Fetching chicken pic
-	Pet: Pic slot: 0
-		Game save_pets(): saved the pets to json file 

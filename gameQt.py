@@ -8,14 +8,15 @@ from . import game
 
 import math
 import json
+import os
 
-
+PATH = os.path.abspath(os.path.dirname(__file__))
 
 class GameQt():
 
     def __init__(self):
          # clear the debug file (mode w+)
-        debug_file=open(mw.pm.addonFolder()+"\\AnkiPet\\debug\\debugfile.txt","w+")
+        debug_file=open(os.path.join(PATH,"debug\\debugfile.txt"),"w+")
         debug_file.write("Starting to __init__() GameQT")
         debug_file.close()
         self.game=game.Game()
@@ -155,7 +156,7 @@ class GameQt():
             self.game.createPet(event_pet)
             
     def help_info_box(self):
-        with open(mw.pm.addonFolder()+"\\AnkiPet\\help.txt") as help_file:
+        with open(os.path.join(PATH,"help.txt")) as help_file:
             message=help_file.read()
         msg = QMessageBox()
         msg.setText(message)
@@ -167,7 +168,7 @@ class Util():
     
     def debug(self,to_print):
         print_str = str(to_print)
-        debug_file=open(mw.pm.addonFolder()+"\\AnkiPet\\debug\\debugfile.txt","a")
+        debug_file=open(os.path.join(PATH,"debug\\debugfile.txt"),"a")
         debug_file.write("\n"+print_str)
         debug_file.close()
         

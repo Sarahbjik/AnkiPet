@@ -9,13 +9,15 @@ from aqt.qt import *
 #from anki.utils import ids2str
 import math
 #import json
-import random
+import random,os
 
 
 def get_max_age(id_str):
     age_dict_lower = {'Chicken':700, 'Cat':1000}
     age_dict_upper = {'Chicken':1500, 'Cat':20000}
     return random.randint(age_dict_lower[id_str],age_dict_upper[id_str])
+
+PATH = os.path.abspath(os.path.dirname(__file__))
 
 
 class Pet():
@@ -41,7 +43,7 @@ class Pet():
         
     def debug(self,to_print):
         print_str = str(to_print)
-        debug_file=open(mw.pm.addonFolder()+"\\AnkiPet\\debug\\debugfile.txt","a")
+        debug_file=open(os.path.join(PATH,"debug\\debugfile.txt"),"a")
         debug_file.write("\n\tPet: "+print_str)
         debug_file.close()
         
@@ -58,13 +60,13 @@ class Chicken(Pet):
         pic_slot=0
         factor=0
         if self.age < 20:                                                           # going from 0 to 19 (20 pics)
-            filename = mw.pm.addonFolder()+"\\AnkiPet\\graphics\\Egg.png"
+            filename = "graphics\\Egg.png" #mw.pm.addonFolder()+"\\AnkiPet\\graphics\\Egg.png"
             pic_slot = int(math.floor(self.age))
         if self.age > 20 and self.age < 40:
-            filename = mw.pm.addonFolder()+"\\AnkiPet\\graphics\\Chick.png"      # 20 chick pics
+            filename = "graphics\\Chick.png" #mw.pm.addonFolder()+"\\AnkiPet\\graphics\\Chick.png"      # 20 chick pics
             pic_slot = int(math.floor(self.age)-20)
         if self.age >= 40:
-            filename = mw.pm.addonFolder()+"\\AnkiPet\\graphics\\Chicken.png"      # 20 chicken pics
+            filename = "graphics\\Chicken.png" #mw.pm.addonFolder()+"\\AnkiPet\\graphics\\Chicken.png"      # 20 chicken pics
             if self.age < 72:
                 factor = math.floor(int(math.floor(self.age)-40)/6)
                 pic_slot = int(math.floor(self.age)-40)%2+factor*2
@@ -76,7 +78,7 @@ class Chicken(Pet):
         super().debug("Fetching chicken pic")
         [pic_slot,filename]= self.pic_slot()
         super().debug("Pic slot: "+str(pic_slot))
-        return super().get_item(filename,pic_slot)
+        return super().get_item(os.path.join(PATH,filename),pic_slot)
 
         
 class Cat(Pet):
@@ -89,13 +91,13 @@ class Cat(Pet):
         pic_slot=0
         factor=0
         if self.age < 20:                                                           # going from 0 to 19 (20 pics)
-            filename = mw.pm.addonFolder()+"\\AnkiPet\\graphics\\kitten_series1to20.png"
+            filename = "graphics\\kitten_series1to20.png" #mw.pm.addonFolder()+"\\AnkiPet\\graphics\\kitten_series1to20.png"
             pic_slot = int(math.floor(self.age))
         if self.age > 20 and self.age < 40:
-            filename = mw.pm.addonFolder()+"\\AnkiPet\\graphics\\kitten_series1to20.png"      
+            filename = "graphics\\kitten_series1to20.png"  #mw.pm.addonFolder()+"\\AnkiPet\\graphics\\kitten_series1to20.png"      
             pic_slot = int(math.floor(self.age)-20)
         if self.age >= 40:
-            filename = mw.pm.addonFolder()+"\\AnkiPet\\graphics\\kitten_series1to20.png"      
+            filename = "graphics\\kitten_series1to20.png"  #mw.pm.addonFolder()+"\\AnkiPet\\graphics\\kitten_series1to20.png"      
             if self.age < 72:
                 factor = math.floor(int(math.floor(self.age)-40)/6)
                 pic_slot = int(math.floor(self.age)-40)%2+factor*2
@@ -107,7 +109,7 @@ class Cat(Pet):
         super().debug("Fetching cat pic")
         [pic_slot,filename]= self.pic_slot()
         super().debug("Pic slot: "+str(pic_slot))
-        return super().get_item(filename,pic_slot)
+        return super().get_item(os.path.join(PATH,filename),pic_slot)
         
 
         
