@@ -10,18 +10,3 @@ Starting to __init__() GameQT
 			Game progress_down_days(): days 0
 	Game __init__: progressed down days.
 Finished __init__() of gameQt
-gameQt.showPet() start
-gameQt.showPet() start to retrieve stats info
-	Game getTodayStats: due until today 83
-	Game getTodayStats: due today 3
-	Game getTodayStats: done today 148
-gameQt.showPet() finished retrieving stats: Current pet growth progress today: 1.00 days.
-To do: 3          Done today:148          Fraction done: 98.0%
-Reputation: 0
-The mood in your stable currently is :|
-gameQt.showPet() finished with window and buttons
-	Pet: Fetching cat pic
-	Pet: Pic slot: 1
-gameQt.showPet() finished rendering the pets
-Checking on game event
-gameQt.showPet() finished check for event
