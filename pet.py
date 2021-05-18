@@ -4,11 +4,8 @@ from aqt import mw
 from aqt.utils import showInfo
 # import all of the Qt GUI library
 from aqt.qt import *
-# import the collection
-#from anki import Collection
-#from anki.utils import ids2str
+
 import math
-#import json
 import random,os
 
 
@@ -59,14 +56,14 @@ class Chicken(Pet):
     def pic_slot(self):
         pic_slot=0
         factor=0
-        if self.age < 20:                                                           # going from 0 to 19 (20 pics)
-            filename = "graphics\\Egg.png" #mw.pm.addonFolder()+"\\AnkiPet\\graphics\\Egg.png"
+        if self.age < 20:                                                           
+            filename = "graphics\\Egg.png" 
             pic_slot = int(math.floor(self.age))
-        if self.age > 20 and self.age < 40:
-            filename = "graphics\\Chick.png" #mw.pm.addonFolder()+"\\AnkiPet\\graphics\\Chick.png"      # 20 chick pics
+        if self.age >= 20 and self.age < 40:
+            filename = "graphics\\Chick.png" 
             pic_slot = int(math.floor(self.age)-20)
         if self.age >= 40:
-            filename = "graphics\\Chicken.png" #mw.pm.addonFolder()+"\\AnkiPet\\graphics\\Chicken.png"      # 20 chicken pics
+            filename = "graphics\\Chicken.png" 
             if self.age < 72:
                 factor = math.floor(int(math.floor(self.age)-40)/6)
                 pic_slot = int(math.floor(self.age)-40)%2+factor*2
@@ -90,19 +87,26 @@ class Cat(Pet):
     def pic_slot(self):
         pic_slot=0
         factor=0
-        if self.age < 20:                                                           # going from 0 to 19 (20 pics)
-            filename = "graphics\\kitten_series1to20.png" #mw.pm.addonFolder()+"\\AnkiPet\\graphics\\kitten_series1to20.png"
+        if self.age < 20:                                                          
+            filename = "graphics\\kitten_series1to20.png" 
             pic_slot = int(math.floor(self.age))
-        if self.age > 20 and self.age < 40:
-            filename = "graphics\\kitten_series1to20.png"  #mw.pm.addonFolder()+"\\AnkiPet\\graphics\\kitten_series1to20.png"      
+        if self.age >= 20 and self.age < 40:
+            filename = "graphics\\kitten_series21to40.png"       
             pic_slot = int(math.floor(self.age)-20)
-        if self.age >= 40:
-            filename = "graphics\\kitten_series1to20.png"  #mw.pm.addonFolder()+"\\AnkiPet\\graphics\\kitten_series1to20.png"      
-            if self.age < 72:
-                factor = math.floor(int(math.floor(self.age)-40)/6)
-                pic_slot = int(math.floor(self.age)-40)%2+factor*2
-            if self.age >= 72:
-                pic_slot = random.randrange(12,20)
+        if self.age >= 40 and self.age < 60:
+            filename = "graphics\\kitten_series21to40.png"       
+            pic_slot = int(math.floor(self.age)-40)
+        if self.age >= 60 and self.age < 80:
+            filename = "graphics\\kitten_series41to60.png"       
+            pic_slot = int(math.floor(self.age)-60)    
+        if self.age >= 80 and self.age < 100:
+            filename = "graphics\\kitten_series41to60.png"       
+            pic_slot = int(math.floor(self.age)-80)    
+        if self.age >= 100:
+            filename = "graphics\\cat_series61to80.png"     
+            factor = math.floor(int(math.floor(self.age)-100)%6)
+            pic_slot = factor
+            
         return [pic_slot, filename]
         
     def get_image(self):
